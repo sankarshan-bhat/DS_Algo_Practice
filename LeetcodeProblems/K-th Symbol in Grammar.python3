@@ -1,0 +1,21 @@
+class Solution:
+    def kthGrammar(self, N, K):
+        """
+        :type N: int
+        :type K: int
+        :rtype: int
+        """
+        if N==1:
+            if K == 1:
+                return 0
+            else:
+                return 1
+        prevRowlen= 2 ** (N-1)
+        if K <= prevRowlen:
+           return self.kthGrammar(N-1,K)
+        else:
+            return int(not (self.kthGrammar(N-1,K-prevRowlen)))
+        
+            
+        
+        

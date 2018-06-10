@@ -1,0 +1,45 @@
+class Solution:
+    def canTransform(self, start, end):
+        """
+        :type start: str
+        :type end: str
+        :rtype: bool
+        """
+        startWithoutXs=""
+        endWithoutXs=""
+        if len(start) != len(end):
+            return False
+        
+        for i in range(len(start)):
+            if start[i] != 'X':
+                startWithoutXs += start[i]
+        for i in range(len(end)):
+            if end[i] != 'X':
+                endWithoutXs += end[i]
+                
+        if startWithoutXs != endWithoutXs: 
+            return False
+        sL = 0
+        eL= 0
+        sR =0 
+        eR = 0
+        for i in range (len(start)):
+            if start[i] == 'L':
+                sL +=1
+            if start[i] == 'R':
+                sR +=1
+            if end[i] == 'L':
+                eL +=1
+            if end[i] == 'R':
+                eR +=1
+            
+            if sL > eL or eR > sR :
+                return False
+            
+        return True
+            
+            
+            
+        
+        
+        
