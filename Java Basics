@@ -1,0 +1,6 @@
+We can achieve Runtime Polymorphism in Java using inheritence.
+ -> When an overridden method is called through a superclass reference, Java determines which version(superclass/subclasses)
+    of that method is to be executed based upon the type of the object being referred to at the time the call occurs. 
+    Thus, this determination is made at run time.
+    
+-> This is not applicable for data members. 
